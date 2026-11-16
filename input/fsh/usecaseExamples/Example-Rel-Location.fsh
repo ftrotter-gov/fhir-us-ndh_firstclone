@@ -12,7 +12,7 @@ Usage: #example
 * healthcareService = Reference(HansSoloService)
 * extension[network].valueReference = Reference(BlueCrossBlueShield-CT-PPO)
 * location[+] = Reference(HansSoloClinic)
-* specialty[0] =  $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
+* specialty[0] =  $NUCCProviderTaxonomy|26.1#207R00000X "Internal Medicine Physician"
 //* organization = Reference(BurrClinic)
 * practitioner = Reference(HansSolo)
 * telecom[0].system = #phone
@@ -34,7 +34,8 @@ Usage: #example
 * active = true
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
 * category = $NdhHealthcareServiceTypeCS#outpat 
-* specialty = $NUCCProviderTaxonomy#207Q00000X "Family Medicine Physician"  
+* specialty = $NUCCProviderTaxonomy#207Q00000X "Family Medicine Physician"
+* specialty[0].coding[0].version = "26.1"
 * location[0] = Reference(HansSoloClinic) 
 * extension[fundingSource].extension[fundingOrganization].valueReference = Reference(HamiltonClinic)
 * extension[fundingSource].extension[fundingSource].valueString = "Private"
@@ -87,7 +88,7 @@ Usage: #example
 * healthcareService = Reference(BurrClinicServices)
 * extension[network].valueReference = Reference(AcmeofCTStdNet)
 * location[0] = Reference(HospLoc2)
-* specialty[0] =  $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
+* specialty[0] =  $NUCCProviderTaxonomy|26.1#207R00000X "Internal Medicine Physician"
 * organization = Reference(BurrClinic)
 * practitioner = Reference(HansSolo)
 * telecom[0].system = #phone
@@ -151,14 +152,12 @@ Usage: #example
 * active = true
 * name = "BlueCrossBlueShield CT Organization"
 * type = $OrgTypeCS#pay "Payer"
-* extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#305R00000X "Preferred Provider Organization"
-* extension[qualification][=].extension[status].valueCode = $CredentialStatusCS#active
 * identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-7890"
 * identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://example.org/ndh-identifiers"
-* identifier[=].value = "BlueCrossBlueShield-CT-ORG"
-* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* identifier[1].system = "http://example.org/ndh-identifiers"
+* identifier[1].value = "BlueCrossBlueShield-CT-ORG"
+* identifier[1].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-222-4444"

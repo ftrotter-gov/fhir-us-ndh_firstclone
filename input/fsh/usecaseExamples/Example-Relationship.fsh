@@ -95,14 +95,12 @@ Usage: #example
 * active = true
 * name = "Organization Manage Payer Network (OMPN)"
 * type = $OrgTypeCS#pay "Payer"
-* extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#305R00000X "Preferred Provider Organization"
-* extension[qualification][=].extension[status].valueCode = $CredentialStatusCS#active
 * identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-6789"
 * identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active "active"
-* identifier[+].system = "http://example.org/ndh-identifiers"
-* identifier[=].value = "OrgManageNetwork"
-* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active "active"
+* identifier[1].system = "http://example.org/ndh-identifiers"
+* identifier[1].value = "OrgManageNetwork"
+* identifier[1].extension[identifier-status].valueCode = $CredentialStatusCS#active "active"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-222-3333"
@@ -129,9 +127,9 @@ Usage: #example
 * identifier[NPI].value = "1003357849"
 //* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://example.org/ndh-identifiers"
-* identifier[=].value = "PractitionerOneWithNetwork1AndNetwork2"
-* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* identifier[1].system = "http://example.org/ndh-identifiers"
+* identifier[1].value = "PractitionerOneWithNetwork1AndNetwork2"
+* identifier[1].extension[identifier-status].valueCode = $CredentialStatusCS#active
 //* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name.text = "PractitionerOne Network1And2024, MD"
 * name.family = "PractitionerOne"
@@ -141,12 +139,12 @@ Usage: #example
 * qualification[=].code.text = "MD"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
-* qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
+* qualification[+].code = $NUCCProviderTaxonomy|26.1#207R00000X "Internal Medicine Physician"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Internal Medicine"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
-* qualification[+].code = $NUCCProviderTaxonomy#207RC0000X "Cardiovascular Disease Physician"
+* qualification[+].code = $NUCCProviderTaxonomy|26.1#207RC0000X "Cardiovascular Disease Physician"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
@@ -165,9 +163,9 @@ Usage: #example
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1003487224"
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://example.org/ndh-identifiers"
-* identifier[=].value = "PractitionerTwoWithNetwork1LeftAfterSixMonths"
-* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* identifier[1].system = "http://example.org/ndh-identifiers"
+* identifier[1].value = "PractitionerTwoWithNetwork1LeftAfterSixMonths"
+* identifier[1].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name.text = "PractitionerTwo Network1, MD"
 * name.family = "PractitionerTwo"
 * name.given[+] = "Network1"
@@ -176,12 +174,12 @@ Usage: #example
 * qualification[=].issuer.display = "State of Illinois"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
-* qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
+* qualification[+].code = $NUCCProviderTaxonomy|26.1#207R00000X "Internal Medicine Physician"
 * qualification[=].code.text = "Board Certified Internal Medicine"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
-* qualification[+].code = $NUCCProviderTaxonomy#207RC0000X "Cardiovascular Disease Physician"
+* qualification[+].code = $NUCCProviderTaxonomy|26.1#207RC0000X "Cardiovascular Disease Physician"
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
@@ -261,8 +259,6 @@ Usage: #example
 * active = true
 * name = "OrgOneWithNetwork1AndNetwork2"
 * type = $NdhOrgTypeCS#fac "Facility"
-* extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#282N00000X "General Acute Care Hospital"
-* extension[qualification][=].extension[status].valueCode = $CredentialStatusCS#active
 //* identifier[NPI].system = "http://hl7.org.fhir/sid/us-npi"
 * identifier[NPI].value = "1336635499"
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
